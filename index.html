@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jurassic Survival</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui">
+      <span id="apple-count">🍎 0</span>
+      <span id="dino-name">🦕 Gallimimus</span>
+      <span id="hp-display">HP: ♥♥♥</span>
+      <span id="score">Score: 0</span>
+      <span id="p2-section" class="hidden p2-ui">
+        <span class="p2-divider">|</span>
+        <span id="p2-apple-count">🍎 0</span>
+        <span id="p2-dino-name">🦕 Gallimimus</span>
+        <span id="p2-hp-display">HP: ♥♥♥</span>
+        <span class="p2-label">P2</span>
+      </span>
+    </div>
+    <div id="game-over" class="hidden">
+      <h1>YOU DIED</h1>
+      <p id="final-score"></p>
+      <button onclick="restartGame()">Play Again</button>
+      <p style="margin-top:10px;font-size:13px;opacity:0.6">or press R</p>
+    </div>
+    <div id="start-screen">
+      <h1>Jurassic Survival</h1>
+      <p>Eat apples to evolve. Avoid tar pits.<br>Press SPACE near a T-Rex or Spino to attack.</p>
+      <p style="font-size:12px;opacity:0.65;margin-top:4px">🎮 Controller: Left stick / D-pad to move &nbsp;|&nbsp; A / Cross to attack</p>
+      <div class="mode-buttons">
+        <button onclick="startGame(false)">1 Player</button>
+        <button class="btn-p2" onclick="startGame(true)">2 Players</button>
+      </div>
+      <div id="two-player-hint" style="margin-top:12px;font-size:12px;opacity:0.55;line-height:1.7">
+        <strong style="opacity:0.8">2 Player co-op:</strong><br>
+        P1: Arrow keys + Space &nbsp;|&nbsp; P2: WASD + Space (or E)
+      </div>
+      <p style="margin-top:10px;font-size:12px;opacity:0.5">F11 to toggle fullscreen</p>
+    </div>
+  </div>
+  <div id="esc-overlay" class="hidden" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.82);color:white;padding:22px 48px;border-radius:10px;font-size:20px;font-family:Arial,sans-serif;z-index:200;text-align:center;pointer-events:none;">
+    Press <strong>ESC</strong> again to exit
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "jurassic_survival",
+  "version": "1.0.0",
+  "description": "Jurassic Survival - Dino Evolution Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^26.8.1"
+  },
+  "keywords": [],
+  "author": "adamm",
+  "license": "ISC",
+  "type": "commonjs",
+  "build": {
+    "appId": "com.adamm.jurassicsurvival",
+    "productName": "Jurassic Survival",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": null,
+      "uninstallerIcon": null,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "index.html",
+      "game.js",
+      "style.css",
+      "main.js",
+      "package.json"
+    ]
+  }
+}
